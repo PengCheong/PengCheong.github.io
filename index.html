@@ -9,212 +9,50 @@
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png"><!-- 180×180 -->
     <link rel="manifest" href="/site.webmanifest">
-    <style>
-        html {
-            line-height: 1.15; 
-            -webkit-text-size-adjust: 100%
+    <script>
+        if(window.matchMedia('(prefers-color-scheme: dark)').matches){
+            document.write('<link rel="stylesheet" href="assets/dark.css" type="text/css" />');
+        } else {
+            document.write('<link rel="stylesheet" href="assets/light.css" type="text/css" />');
         }
-        body,html {
-            height: 100%; 
-            -webkit-box-sizing: border-box;
-            box-sizing: border-box
-        }
-        body {
-            margin: 0;
-            color: #2a2b2c;
-            font: 16px/22px -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",sans-serif;
-            background: #ebedee; padding: 50px;
-            overflow: hidden
-        }
-        a {
-            background-color: transparent
-        }
-        img {
-            border-style: none;
-            border-radius: 50%
-        }
-        @media (max-width: 768px){ 
-            body {
-                padding:30px
-            }
-        }
-        @media (max-width: 420px){
-            body {
-                padding:10px
-            }
-        }
-        .wrapper {
-            display: -webkit-box;
-            display: -webkit-flex;
-            display: -ms-flexbox;
-            display: flex; 
-            -webkit-box-pack: center; 
-            -webkit-justify-content: center;
-            -ms-flex-pack: center;
-            justify-content: center;
-            -webkit-box-align: center; 
-            -webkit-align-items: center; 
-            -ms-flex-align: center; 
-            align-items: center; 
-            -webkit-box-orient: vertical; 
-            -webkit-box-direction: normal; 
-            -webkit-flex-direction: column; 
-            -ms-flex-direction: column; 
-            flex-direction: column; height: 100%
-        }
-        .container {
-            position: relative; 
-            -webkit-box-sizing: border-box; 
-            box-sizing: border-box; 
-            width: 80%; 
-            background: #fff; 
-            -webkit-border-radius: 10px; 
-            border-radius: 10px; 
-            overflow: hidden; 
-            max-width: 700px; 
-            -webkit-box-shadow: 0 8px 20px rgba(0,0,0,.06); 
-            box-shadow: 0 8px 20px rgba(0,0,0,.06)
-        }
-        @media (max-width: 768px) {
-            .container{
-                width:100%; 
-                min-width: 290px
-            }
-        }
-        .container > div {
-            -webkit-box-sizing: border-box; 
-            box-sizing: border-box; 
-            padding: 55px 34px
-        }
-        @media (max-width: 420px) {
-            .container > div {
-                padding:40px 24.7px!important
-            }
-        }
-        .profile {
-            text-align: center
-        }
-        .profile .avatar {
-            -webkit-border-radius: 50%; 
-            border-radius: 50%; 
-            overflow: hidden; 
-            -webkit-box-shadow: 0 0 6px rgba(0,0,0,.5); 
-            box-shadow: 0 0 6px rgba(0,0,0,.5)
-        }
-        .tooltip{ 
-            position: relative; 
-            display: inline-block
-        }
-        .tooltip:focus::after,
-        .tooltip:hover::after {
-            opacity: 1; 
-            -webkit-transform: translate(-50%,-.2rem); 
-            -ms-transform: translate(-50%,-.2rem); 
-            transform: translate(-50%,-.2rem)
-        }
-        .tooltip::after { 
-            background: rgba(48,55,66,.6); 
-            -webkit-border-radius: 4px; 
-            border-radius: 4px; 
-            color: #fafafa; 
-            content: attr(title); 
-            display: block; 
-            margin-top: 4px; 
-            font-size: 14px; 
-            max-width: 300px; 
-            opacity: 0; 
-            overflow: hidden; 
-            padding: 3px 6px; 
-            pointer-events: none; 
-            position: absolute; 
-            -o-text-overflow: ellipsis; 
-            text-overflow: ellipsis; 
-            -webkit-transform: translate(-50%,.4rem); 
-            -ms-transform: translate(-50%,.4rem); 
-            transform: translate(-50%,.4rem); 
-            -webkit-transition: opacity .2s,-webkit-transform .2s; 
-            transition: opacity .2s,-webkit-transform .2s; 
-            -o-transition: opacity .2s,transform .2s; 
-            transition: opacity .2s,transform .2s; 
-            transition: opacity .2s,transform .2s,-webkit-transform .2s; 
-            white-space: pre; 
-            z-index: 300; 
-            left: 50%; 
-            bottom: auto; 
-            top: 100%
-        }
-        .link {
-            padding-top: 20px; 
-            text-align: center
-        }
-        .link i {
-            margin: 0 10px
-        }
-        .link a { 
-            color: #7c8891
-        }
-        .footer {
-            color: #2a2b2c; 
-            padding: 20px 0
-        }
-        .label {
-            display: normal; 
-            color: #2a2b2c; 
-            text-decoration: none; 
-            font-size: 13px; 
-            padding: 4px 8px; 
-            -webkit-border-radius: 3px;
-            border-radius: 3px; 
-            background: #c5d1d3
-        }
-        @media (max-width: 670px) {
-            .profile{ 
-                position:relative; 
-                width: 100%; 
-                background-size: cover
-            } 
-            .portfolio { 
-                margin: 0
-            }
-        }
-        @media (prefers-color-scheme: dark) { 
-            body {
-                color: #d9d9d9; 
-                background: #1b1b1b;
-            } 
-            .container {
-                background: #252d38;
-            } 
-            .link a { 
-                color: #d9d9d9;
-            } 
-            .footer { 
-                color: #d9d9d9;
-            }
-        } 
-    </style>
+    </script>
 </head>
 <body>
-    <div class="wrapper">
-        <div class="container">
-            <div class="profile">
-                <img height="128" width="128" src="https://cdn.jsdelivr.net/gh/DioPong/CDN@main/image/avatar/LetterD.svg" alt="DioPong">
-                <h1>DioPong</h1>
-                <p class="role">Student & Independent Developer</p>
-                <p class="description">Undergraduate | Major in SE | Pre Civil Servants</p>
-                <div class="link">
-                    <a class="tooltip" title="Blog" href="https://blog.2to.fun/" target="_self" rel="external noopenner noreferrer nofollow"><i><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-icon="typewriter" data-prefix="fad" width="20px" height="19px" viewBox="0 0 512 512"><defs></defs><g><path fill="currentColor" d="M368 96a16 16 0 01-16-16V0H88a24 24 0 00-24 24v168h83a32 32 0 0122 9l14 14a32 32 0 0022 9h102a32 32 0 0022-9l14-14a32 32 0 0122-9h83V96z" opacity=".4"></path><path fill="currentColor" d="M368 96h80v-5a18 18 0 00-5-12L369 5a18 18 0 00-12-5h-5v80a16 16 0 0016 16zm112 96H365a32 32 0 00-22 9l-14 14a32 32 0 01-22 9H205a32 32 0 01-22-9l-14-14a32 32 0 00-22-9H32a32 32 0 00-32 32v32a32 32 0 0032 32v160a64 64 0 0064 64h320a64 64 0 0064-64V288a32 32 0 0032-32v-32a32 32 0 00-32-32zM336 296a8 8 0 018-8h16a8 8 0 018 8v16a8 8 0 01-8 8h-16a8 8 0 01-8-8zm-24 56h16a8 8 0 018 8v16a8 8 0 01-8 8h-16a8 8 0 01-8-8v-16a8 8 0 018-8zm-40-56a8 8 0 018-8h16a8 8 0 018 8v16a8 8 0 01-8 8h-16a8 8 0 01-8-8zm-24 56h16a8 8 0 018 8v16a8 8 0 01-8 8h-16a8 8 0 01-8-8v-16a8 8 0 018-8zm-40-56a8 8 0 018-8h16a8 8 0 018 8v16a8 8 0 01-8 8h-16a8 8 0 01-8-8zm-24 56h16a8 8 0 018 8v16a8 8 0 01-8 8h-16a8 8 0 01-8-8v-16a8 8 0 018-8zm-40-56a8 8 0 018-8h16a8 8 0 018 8v16a8 8 0 01-8 8h-16a8 8 0 01-8-8zm-40 24H88a8 8 0 01-8-8v-16a8 8 0 018-8h16a8 8 0 018 8v16a8 8 0 01-8 8zm32 64h-16a8 8 0 01-8-8v-16a8 8 0 018-8h16a8 8 0 018 8v16a8 8 0 01-8 8zm232 56a8 8 0 01-8 8H152a8 8 0 01-8-8v-16a8 8 0 018-8h208a8 8 0 018 8zm32-64a8 8 0 01-8 8h-16a8 8 0 01-8-8v-16a8 8 0 018-8h16a8 8 0 018 8zm32-64a8 8 0 01-8 8h-16a8 8 0 01-8-8v-16a8 8 0 018-8h16a8 8 0 018 8z"></path></g></svg></i></a>
-                    <a class="tooltip" title="Github" href="https://github.com/DioPong" target="_self" rel="external noopenner noreferrer nofollow"><i><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-icon="github" data-prefix="fab" width="20px" height="20px" viewBox="0 0 496 512"><defs></defs><path fill="currentColor" d="M166 397c0 2-2 4-5 4-4 0-6-1-6-4 0-2 2-3 5-3 3-1 6 1 6 3zm-31-4c-1 2 1 4 4 5s6 0 6-2-1-5-4-5c-3-1-5 0-6 2zm44-2c-3 1-5 3-5 5 1 2 3 3 6 3 3-1 5-3 5-5s-3-3-6-3zM245 8A240 240 0 000 252a251 251 0 00170 239c12 2 17-5 17-12v-61s-70 15-85-30c0 0-12-29-28-37 0 0-23-15 2-15 0 0 24 2 38 26 22 38 59 27 73 21 2-16 9-28 16-34-56-6-112-14-112-111 0-27 7-41 23-59a95 95 0 013-67c21-7 69 27 69 27a235 235 0 01126 0s48-34 69-27a94 94 0 012 67c16 18 26 32 26 59 0 97-59 105-115 111 9 8 17 23 17 46v84c0 6 5 14 17 12a248 248 0 00168-239C496 113 384 8 245 8zM97 353c-1 1-1 3 1 5 1 2 4 2 5 1s1-3-1-5c-1-2-4-2-5-1zm-11-8l3 4c1 1 3 0 4-1s0-3-2-4-4 0-5 1zm33 35c-2 2-1 5 1 7s5 2 7 1c1-2 0-5-2-7s-5-2-6-1zm-12-14v6c2 2 5 3 6 2 2-1 2-4 0-6-1-3-4-4-6-2z"></path></svg></i></a>                    
-                    <a class="tooltip" title="Run" href="https://run.2to.fun/" target="_self" rel="external noopenner noreferrer nofollow"><i><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="running" width="20px" height="20px" viewBox="0 0 416 512"><path fill="currentColor" d="M272 96c26.51 0 48-21.49 48-48S298.51 0 272 0s-48 21.49-48 48 21.49 48 48 48zM113.69 317.47l-14.8 34.52H32c-17.67 0-32 14.33-32 32s14.33 32 32 32h77.45c19.25 0 36.58-11.44 44.11-29.09l8.79-20.52-10.67-6.3c-17.32-10.23-30.06-25.37-37.99-42.61zM384 223.99h-44.03l-26.06-53.25c-12.5-25.55-35.45-44.23-61.78-50.94l-71.08-21.14c-28.3-6.8-57.77-.55-80.84 17.14l-39.67 30.41c-14.03 10.75-16.69 30.83-5.92 44.86s30.84 16.66 44.86 5.92l39.69-30.41c7.67-5.89 17.44-8 25.27-6.14l14.7 4.37-37.46 87.39c-12.62 29.48-1.31 64.01 26.3 80.31l84.98 50.17-27.47 87.73c-5.28 16.86 4.11 34.81 20.97 40.09 3.19 1 6.41 1.48 9.58 1.48 13.61 0 26.23-8.77 30.52-22.45l31.64-101.06c5.91-20.77-2.89-43.08-21.64-54.39l-61.24-36.14 31.31-78.28 20.27 41.43c8 16.34 24.92 26.89 43.11 26.89H384c17.67 0 32-14.33 32-32s-14.33-31.99-32-31.99z"></path></svg></i></a>
-                    <a class="tooltip" title="Talk" href="https://talk.2to.fun/" target="_self" rel="external noopenner noreferrer nofollow"><i><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search-dollar" width="20px" height="20px" viewBox="0 0 512 512"><path fill="currentColor" d="M505.04 442.66l-99.71-99.69c-4.5-4.5-10.6-7-17-7h-16.3c27.6-35.3 44-79.69 44-127.99C416.03 93.09 322.92 0 208.02 0S0 93.09 0 207.98s93.11 207.98 208.02 207.98c48.3 0 92.71-16.4 128.01-44v16.3c0 6.4 2.5 12.5 7 17l99.71 99.69c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.59.1-33.99zm-297.02-90.7c-79.54 0-144-64.34-144-143.98 0-79.53 64.35-143.98 144-143.98 79.54 0 144 64.34 144 143.98 0 79.53-64.35 143.98-144 143.98zm27.11-152.54l-45.01-13.5c-5.16-1.55-8.77-6.78-8.77-12.73 0-7.27 5.3-13.19 11.8-13.19h28.11c4.56 0 8.96 1.29 12.82 3.72 3.24 2.03 7.36 1.91 10.13-.73l11.75-11.21c3.53-3.37 3.33-9.21-.57-12.14-9.1-6.83-20.08-10.77-31.37-11.35V112c0-4.42-3.58-8-8-8h-16c-4.42 0-8 3.58-8 8v16.12c-23.63.63-42.68 20.55-42.68 45.07 0 19.97 12.99 37.81 31.58 43.39l45.01 13.5c5.16 1.55 8.77 6.78 8.77 12.73 0 7.27-5.3 13.19-11.8 13.19h-28.1c-4.56 0-8.96-1.29-12.82-3.72-3.24-2.03-7.36-1.91-10.13.73l-11.75 11.21c-3.53 3.37-3.33 9.21.57 12.14 9.1 6.83 20.08 10.77 31.37 11.35V304c0 4.42 3.58 8 8 8h16c4.42 0 8-3.58 8-8v-16.12c23.63-.63 42.68-20.54 42.68-45.07 0-19.97-12.99-37.81-31.59-43.39z"></path></svg></i></a>
-                    <a class="tooltip" title="Links" href="https://links.2to.fun/" target="_self" rel="external noopenner noreferrer nofollow"><i><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="paperclip" width="20px" height="20px" viewBox="0 0 448 512"><path fill="currentColor" d="M43.246 466.142c-58.43-60.289-57.341-157.511 1.386-217.581L254.392 34c44.316-45.332 116.351-45.336 160.671 0 43.89 44.894 43.943 117.329 0 162.276L232.214 383.128c-29.855 30.537-78.633 30.111-107.982-.998-28.275-29.97-27.368-77.473 1.452-106.953l143.743-146.835c6.182-6.314 16.312-6.422 22.626-.241l22.861 22.379c6.315 6.182 6.422 16.312.241 22.626L171.427 319.927c-4.932 5.045-5.236 13.428-.648 18.292 4.372 4.634 11.245 4.711 15.688.165l182.849-186.851c19.613-20.062 19.613-52.725-.011-72.798-19.189-19.627-49.957-19.637-69.154 0L90.39 293.295c-34.763 35.56-35.299 93.12-1.191 128.313 34.01 35.093 88.985 35.137 123.058.286l172.06-175.999c6.177-6.319 16.307-6.433 22.626-.256l22.877 22.364c6.319 6.177 6.434 16.307.256 22.626l-172.06 175.998c-59.576 60.938-155.943 60.216-214.77-.485z"></path></svg></i></a>
+    <div class="root">
+        <section class="clock container">
+            <div class="clock_container grid">
+                <div class="clock_content grid">
+                    <div class="clock_circle">
+                        <span class="clock_twelve"></span>
+                        <span class="clock_three"></span>
+                        <span class="clock_six"></span>
+                        <span class="clock_nine"></span>
+
+                        <div class="clock_rounder"></div>
+                        <div class="clock_hour" id="clock-hour"></div>
+                        <div class="clock_minute" id="clock-minute"></div>
+                        <div class="clock_second" id="clock-second"></div>
+
+                    </div>
                 </div>
+                
+                <div class="clock_logo"><strong>Dio</strong>Pong &copy; 2018-2021</div>
+                <!-- <a href="" target="_blank" class="clock_logo"><strong>Dio</strong>Pong &copy; 2018-2021</a> -->
             </div>
-        </div>
-        <div class="footer">
-            Made by 🎁
-            <a class="label" href="https://2to.fun/">DioPong</a>
-        </div>
+
+            <div class="card">
+                <ul class="list">
+                    <li><a href="https://github.com/DioPong"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.026 2c-5.509 0-9.974 4.465-9.974 9.974 0 4.406 2.857 8.145 6.821 9.465.499.09.679-.217.679-.481 0-.237-.008-.865-.011-1.696-2.775.602-3.361-1.338-3.361-1.338-.452-1.152-1.107-1.459-1.107-1.459-.905-.619.069-.605.069-.605 1.002.07 1.527 1.028 1.527 1.028.89 1.524 2.336 1.084 2.902.829.091-.645.351-1.085.635-1.334-2.214-.251-4.542-1.107-4.542-4.93 0-1.087.389-1.979 1.024-2.675-.101-.253-.446-1.268.099-2.64 0 0 .837-.269 2.742 1.021a9.582 9.582 0 0 1 2.496-.336 9.554 9.554 0 0 1 2.496.336c1.906-1.291 2.742-1.021 2.742-1.021.545 1.372.203 2.387.099 2.64.64.696 1.024 1.587 1.024 2.675 0 3.833-2.33 4.675-4.552 4.922.355.308.675.916.675 1.846 0 1.334-.012 2.41-.012 2.737 0 .267.178.577.687.479C19.146 20.115 22 16.379 22 11.974 22 6.465 17.535 2 12.026 2z"></path></svg></a></li>
+                    <li><a href="https://blog.2to.fun"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm7.931 9h-2.764a14.67 14.67 0 0 0-1.792-6.243A8.013 8.013 0 0 1 19.931 11zM12.53 4.027c1.035 1.364 2.427 3.78 2.627 6.973H9.03c.139-2.596.994-5.028 2.451-6.974.172-.01.344-.026.519-.026.179 0 .354.016.53.027zm-3.842.7C7.704 6.618 7.136 8.762 7.03 11H4.069a8.013 8.013 0 0 1 4.619-6.273zM4.069 13h2.974c.136 2.379.665 4.478 1.556 6.23A8.01 8.01 0 0 1 4.069 13zm7.381 6.973C10.049 18.275 9.222 15.896 9.041 13h6.113c-.208 2.773-1.117 5.196-2.603 6.972-.182.012-.364.028-.551.028-.186 0-.367-.016-.55-.027zm4.011-.772c.955-1.794 1.538-3.901 1.691-6.201h2.778a8.005 8.005 0 0 1-4.469 6.201z"></path></svg></a></li>
+                    <li><a href="https://run.2to.fun/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="17" cy="4" r="2"></circle><path d="M15.777 10.969a2.007 2.007 0 0 0 2.148.83l3.316-.829-.483-1.94-3.316.829-1.379-2.067a2.01 2.01 0 0 0-1.272-.854l-3.846-.77a1.998 1.998 0 0 0-2.181 1.067l-1.658 3.316 1.789.895 1.658-3.317 1.967.394L7.434 17H3v2h4.434c.698 0 1.355-.372 1.715-.971l1.918-3.196 5.169 1.034 1.816 5.449 1.896-.633-1.815-5.448a2.007 2.007 0 0 0-1.506-1.33l-3.039-.607 1.772-2.954.417.625z"></path></svg></a></li>
+                    <li><a href="https://links.2to.fun/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.563 3.34a1.002 1.002 0 0 0-.989-.079l-17 8a1 1 0 0 0 .026 1.821L8 15.445v6.722l5.836-4.168 4.764 2.084a1 1 0 0 0 1.399-.85l1-15a1.005 1.005 0 0 0-.436-.893zm-2.466 14.34-5.269-2.306L16 9.167l-7.649 4.25-2.932-1.283 13.471-6.34-.793 11.886z"></path></svg></a></li>
+                    <li><a href="https://talk.2to.fun/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 2H8C4.691 2 2 4.691 2 8v12a1 1 0 0 0 1 1h13c3.309 0 6-2.691 6-6V8c0-3.309-2.691-6-6-6zm4 13c0 2.206-1.794 4-4 4H4V8c0-2.206 1.794-4 4-4h8c2.206 0 4 1.794 4 4v7z"></path><circle cx="9.5" cy="11.5" r="1.5"></circle><circle cx="14.5" cy="11.5" r="1.5"></circle></svg></a></li>
+
+                </ul>
+            </div>
+        </section>
     </div>
+    <!-- Import main.js -->
+    <script src="assets/main.js"></script>
 </body>
 </html>
