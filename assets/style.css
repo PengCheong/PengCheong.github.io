@@ -1,0 +1,59 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+/* VARIABLES CSS */
+:root {
+    --mimicry: 5px 5px 10px #cecece, -5px -5px 10px #ffffff;
+    --font: 'Poppins', sans-serif;
+    --body-color: #f1f1f1;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --mimicry: 5px 5px 10px #0c0c0c, -5px -5px 10px #303030
+    }
+}
+
+@media screen and (min-width: 968px) {
+    :root {
+        --biggest-font-size: 3.5rem;
+        --small-font-size: .875rem;
+        --smaller-font-size: .813rem;
+        --tiny-font-size: .75rem;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font);
+    background-color: var(--body-color);
+}
+
+a {
+    text-decoration: none;
+}
+
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.card {
+    text-align: center;
+}
+
+.card .selfie img {
+    width: 100px;
+    display: inline;
+}
+
+.card .selfie .social {
+    display: inline-block;
+}
