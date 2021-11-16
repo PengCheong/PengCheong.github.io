@@ -9,6 +9,12 @@
     --black: #333;
     --white: #fff;
 }
+@media (prefers-color-scheme: dark) {
+    :root {
+        --black: #fff;
+        --white: #333;
+    }
+}
 .navigation {
     position: absolute;
     top: 0;
@@ -33,7 +39,7 @@
     color: var(--black);
     padding: 5px 20px;
     border-radius: 40px;
-    transition: .3s;
+    transition: .2s;
 }
 .navigation li a:hover {
     background: var(--black);
